@@ -1,0 +1,5 @@
+ampy --port /dev/ttyACM0 ls
+ampy --port /dev/ttyACM0 run main.py
+ampy --port /dev/ttyACM0 put main.py
+picocom /dev/ttyACM0 
+socat STDIO,raw,echo=0,cr,escape=27 /dev/ttyACM0,sane,rawer,b115200,cs8,parenb=0,cr; stty sane
